@@ -56,7 +56,7 @@ mobile-app-learning-portfolio/
 
 | Module | Android Developers Unit | Status | Date Completed |
 |---|---|---|---|
-| Module 1 | Unit 1 – Your First Android App | ⬜ Not started / 🟡 In progress / ✅ Done | [date] |
+| Module 1 | Unit 1 – Your First Android App | ✅ Done | Sep 14, 2026 |
 | Module 2 | Unit 2 – Building App UI | ⬜ / 🟡 / ✅ | [date] |
 | Module 3 | [Unit name] | ⬜ / 🟡 / ✅ | [date] |
 | Module 4 | [Unit name] | ⬜ / 🟡 / ✅ | [date] |
@@ -67,9 +67,11 @@ mobile-app-learning-portfolio/
 
 | # | Badge Name | Module | Date Earned |
 |---|---|---|---|
-| 1 | [Badge name] | Module 1 | [date] |
-| 2 | [Badge name] | Module 1 | [date] |
-| 3 | [Badge name] | Module 1 | [date] |
+| 1 | Learning (progressing through levels, currently level 8) | Module 1 | Sep 14, 2026 |
+| 2 | First Learning Pathway and Quiz | Module 1 | Sep 14, 2026 |
+| 3 | Introduction to Programming in Kotlin | Module 1 | Sep 14, 2026 |
+| 4 | Create your first Android app (completion) | Module 1 | Sep 14, 2026 |
+| 5 | Set up Android Studio | Module 1 | Sep 14, 2026 |
 | ... | | | |
 | 10 | [Badge name] | Module 4 | [date] |
 
