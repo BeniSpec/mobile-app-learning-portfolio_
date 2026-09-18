@@ -49,9 +49,9 @@ mobile-app-learning-portfolio/
 | Module | Android Developers Unit | Status | Date Completed |
 |---|---|---|---|
 | Module 1 | Unit 1 – Your First Android App | ✅ Done | Started Aug 4, 2026 · Completed Sep 18, 2026 |
-| Module 2 | Unit 2 – Building App UI | 🔶 In progress (Pathway 2 of 3 done) | Started Sep 18, 2026 |
-| Module 3 | Unit 3 – Display Lists & Material Design | ⬜ Not started | — |
-| Module 4 | Unit 4 – Navigation and App Architecture | ⬜ Not started | — |
+| Module 2 | Unit 2 – Building App UI | ✅ Done (Pathway 2 of 3 done) | Started Sep 18, 2026 |
+| Module 3 | Unit 3 – Display Lists & Material Design | The 6 links done on Module 1 and 2 of Topic 1 and 2| — |
+| Module 4 | Unit 4 – Navigation and App Architecture | The 6 links done on Module 1 and 2 | — |
 
 ## Badges Obtained (minimum 10 required)
 
