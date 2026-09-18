@@ -1,4 +1,4 @@
-# Module 2 – Analysis: Unit 2, Pathway 1 – Kotlin Fundamentals
+# Module 2 – Analysis: Unit 2 (Building App UI)
 
 ## 1. Overview of What Was Covered
 
@@ -48,7 +48,22 @@ This uses the Elvis operator (`?:`) to supply a fallback string only when `mento
 - Badges: Kotlin Fundamentals, plus 3 more Learning badges (levels 14 → 17) — see [`Badge-Evidence/`](./Badge-Evidence/)
 - Quiz result: 9/10 on the Kotlin Fundamentals quiz
 
-## 7. References
+## 7. References (Pathway 1)
 
 - Google. (2026). *Android Basics with Compose – Unit 2: Building app UI*. Android Developers. https://developer.android.com/courses/pathways/android-basics-compose-unit-2-pathway-1
 - Google. (2026). *Use classes and objects in Kotlin*. Android Developers. https://developer.android.com/codelabs/basic-android-kotlin-compose-classes-and-objects
+
+---
+
+## Pathway 2: Add a Button to an App
+
+Why remember is needed:
+If you don't use remember, the step goes back to 1 every time the screen updates because the app forgets what it was. remember stops it from resetting.
+
+Why mutableStateOf is used:
+A regular variable changes value in the code, but Compose doesn't notice it. mutableStateOf makes it so the screen actually redraws when it changes.
+
+Connection to Pathway 1 (lambdas):
+The onClick part uses a lambda, which is just code that runs later when you tap the button, kind of like the lambdas we used with collections earlier.
+
+Evidence: `Source-Code/Lemonade.kt`, badge screenshots in `Badge-Evidence/` (Add a Button to an App badge, Learning milestone level 21).

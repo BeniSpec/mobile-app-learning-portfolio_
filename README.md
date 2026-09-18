@@ -49,7 +49,7 @@ mobile-app-learning-portfolio/
 | Module | Android Developers Unit | Status | Date Completed |
 |---|---|---|---|
 | Module 1 | Unit 1 – Your First Android App | ✅ Done | Started Aug 4, 2026 · Completed Sep 18, 2026 |
-| Module 2 | Unit 2 – Building App UI | 🔶 In progress (Pathway 1 of 3 done) | Started Sep 18, 2026 |
+| Module 2 | Unit 2 – Building App UI | 🔶 In progress (Pathway 2 of 3 done) | Started Sep 18, 2026 |
 | Module 3 | Unit 3 – Display Lists & Material Design | ⬜ Not started | — |
 | Module 4 | Unit 4 – Navigation and App Architecture | ⬜ Not started | — |
 
@@ -65,9 +65,10 @@ mobile-app-learning-portfolio/
 | 6 | First Learning Pathway and Quiz | Module 1 | Sep 14, 2026 |
 | 7 | Build a Basic Layout | Module 1 | Sep 18, 2026 |
 | 8 | Kotlin Fundamentals | Module 2 | Sep 18, 2026 |
-| 9 | Learning (currently level 17) | Module 1 & 2 (ongoing) | Sep 18, 2026 |
+| 9 | Add a button to an app | Module 2 | Sep 18, 2026 |
+| 10 | Learning (currently level 21) | Module 1 & 2 (ongoing) | Sep 18, 2026 |
 
-**9 of 10 minimum badges earned** — just 1 more badge needed. This will come naturally from continuing Module 2 (Unit 2 has 2 more pathways) or from Module 3.
+**10 of 10 minimum badges earned** — minimum requirement met. Continuing Module 2 (1 pathway left) and starting Module 3 will add more beyond the minimum.
 
 ## Android Developer Profile
 
@@ -83,4 +84,4 @@ Full reflection is in [`Reflection/Reflection.md`](./Reflection/Reflection.md).
 
 ---
 
-*Last updated: Sep 18, 2026*
+*Last updated: Sep 18, 2026 (Module 2, Pathway 2)*
