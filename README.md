@@ -48,7 +48,7 @@ mobile-app-learning-portfolio/
 
 | Module | Android Developers Unit | Status | Date Completed |
 |---|---|---|---|
-| Module 1 | Unit 1 – Your First Android App | ✅ Done | Sep 14, 2026 |
+| Module 1 | Unit 1 – Your First Android App | ✅ Done | Started Aug 4, 2026 · Completed Sep 18, 2026 |
 | Module 2 | Unit 2 – Building App UI | ⬜ Not started | — |
 | Module 3 | TBD | ⬜ Not started | — |
 | Module 4 | TBD | ⬜ Not started | — |
@@ -57,13 +57,16 @@ mobile-app-learning-portfolio/
 
 | # | Badge Name | Module | Date Earned |
 |---|---|---|---|
-| 1 | Learning (multiple levels) | Module 1 | Sep 14, 2026 |
-| 2 | First Learning Pathway and Quiz | Module 1 | Sep 14, 2026 |
-| 3 | Introduction to Programming in Kotlin | Module 1 | Sep 14, 2026 |
-| 4 | Create your first Android app | Module 1 | Sep 14, 2026 |
+| 1 | Joined the Google Developer Program | Module 1 | Sep 26, 2025 |
+| 2 | Introduction to Programming in Kotlin | Module 1 | Aug 4, 2026 |
+| 3 | Android Studio User | Module 1 | Aug 4, 2026 |
+| 4 | Android Studio – Quail releases | Module 1 | Aug 4, 2026 |
 | 5 | Set up Android Studio | Module 1 | Sep 14, 2026 |
+| 6 | First Learning Pathway and Quiz | Module 1 | Sep 14, 2026 |
+| 7 | Learning (currently level 13) | Module 1 | Sep 18, 2026 |
+| 8 | Build a Basic Layout | Module 1 | Sep 18, 2026 |
 
-5 of 10 minimum badges earned so far.
+8 of 10 minimum badges earned so far. Module 1 (Unit 1) is now fully complete. At least 2 more badges will come from Module 2 (Unit 2) onward.
 
 ## Android Developer Profile
 
@@ -79,4 +82,4 @@ Full reflection is in [`Reflection/Reflection.md`](./Reflection/Reflection.md).
 
 ---
 
-*Last updated: Sep 14, 2026*
+*Last updated: Sep 18, 2026*

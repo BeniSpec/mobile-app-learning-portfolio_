@@ -2,37 +2,38 @@
 
 ## 1. Overview of What Was Covered
 
-This module covered two pathways under Android Basics with Compose → First Android App. Pathway 1 ("Intro to Kotlin") built the language foundations: variable declarations (`val`/`var`), Kotlin's built-in data types, functions, return values, and named arguments — assessed through a quiz. Pathway 2 ("Create your first Android app") moved into actual Android development: creating a project from the Empty Activity template, exploring the generated project files, editing a Composable function's text, changing a background color, and adding padding — producing a working Compose app that displays a personalized greeting.
+This module covered all three parts of Unit 1 in Android Basics with Compose: Introduction to Programming in Kotlin, Setup Android Studio, and Build a Basic Layout (which included the "Create your first Android app" coding lab). The first part covered Kotlin basics — variable declarations (`val`/`var`), data types, functions, and return values, tested through a quiz. The second part covered installing and configuring Android Studio. The third part was hands-on: creating a project from the Empty Activity template, editing a Composable function's text, changing a background color, adding padding, running the app on the emulator, and finally building a small layout combining text and image composables.
 
-> ✏️ **Add your own sentence here:** what felt like the biggest jump between "learning Kotlin syntax" and "seeing it become a real running app"?
+The biggest jump for me was going from just answering quiz questions about Kotlin syntax to actually seeing those same ideas (parameters, default values) used inside real Compose code that runs on a screen.
 
 ## 2. Techniques Used and How They Compare
 
-**Technique A: `val` vs `var` for variable declarations**
-- `val` creates a read-only reference; `var` allows reassignment.
-- In the app code, `name: String` is a function *parameter*, not a `val`/`var` declaration — but the same immutability principle shows up in how Compose favors passing data in as parameters rather than mutating global state, which keeps a composable's output predictable for a given input.
+**val vs var**
+`val` creates a value that can't be reassigned. `var` can be reassigned. In the quiz this was tested directly (declaring something with `var` that never changes is bad practice). In the actual app code, the `name` parameter in the `Greeting` function works the same way — it's passed in once and not reassigned, which keeps the function predictable.
 
-**Technique B: Composable functions vs a plain Kotlin function**
-- A plain Kotlin function (like `fun greet(name: String)`) just runs code and returns a value or `Unit`.
-- A `@Composable` function (like `Greeting`) doesn't "return" UI the normal way — it describes what the UI *should look like* for given inputs, and Compose's runtime decides when to re-invoke it (recomposition) if those inputs change.
+**Plain Kotlin function vs Composable function**
+A normal Kotlin function just runs and returns a value. A `@Composable` function like `Greeting` describes what the UI should look like — Compose decides when to re-run it if the input changes. This is a different way of thinking about functions than the "input → output" model from the quiz.
 
-**Comparison:** the quiz's data/function concepts (parameters, arguments, return types) turned out to be the exact same building blocks used to define a Composable — `fun Greeting(name: String, modifier: Modifier = Modifier)` uses a parameter with a **default argument** (`Modifier = Modifier`), the same technique tested in the quiz's named-arguments question. Seeing the same language feature reused in a real UI function made the earlier quiz concepts click into place rather than feeling abstract.
+**Row vs Column layout**
+`Row` arranges its children left-to-right; `Column` arranges them top-to-bottom. Building the basic layout meant choosing between these based on what the design actually needed — text next to an image uses `Row`, text stacked above/below an image uses `Column`. Neither is "better," it's purely a design decision.
+
+**Comparison:** the named-argument and default-value ideas from the quiz turned out to be the same thing used in `fun Greeting(name: String, modifier: Modifier = Modifier)` — `modifier` has a default value, same concept, just now inside real UI code instead of a quiz question. That same composable pattern (parameters in, UI description out) scales up directly into combining multiple composables inside a `Row`/`Column` for the basic layout exercise.
 
 ## 3. Strengths and Limitations
 
-**Strengths observed in this lab:**
-- The `@Preview` annotation lets you see UI changes (like the background color or padding) instantly in Android Studio's design pane, without rebuilding and running the whole app on an emulator — a fast feedback loop.
-- Default parameter values (`modifier: Modifier = Modifier`) mean the function can be called simply as `Greeting("Name")` for the common case, while still allowing a caller to pass a custom `Modifier` when needed.
+**Strengths**
+- The `@Preview` annotation shows UI changes instantly in Android Studio without needing to run the full app on an emulator — much faster to check small changes.
+- Giving `modifier` a default value means most calls can just be `Greeting("Name")`, but a custom modifier can still be passed in when needed.
+- `Row`/`Column` compose cleanly — nesting one inside the other builds more complex layouts without needing a separate layout language (unlike older XML-based Android layouts).
 
-**Limitations / things to watch for:**
-- Hardcoding the name directly in `Greeting("Benat Siraj Ahmed")` inside `MainActivity` works for a one-off demo, but isn't how a real app would handle user data — it would come from user input or a data source, not be hardcoded at the call site.
-- `Surface(color = Color.Cyan)` hardcodes a specific color rather than pulling from `MaterialTheme.colorScheme`, so it won't automatically adapt to light/dark theme the way the outer `Surface` in `MainActivity` does.
+**Limitations**
+- Hardcoding the name (`Greeting("Benat Siraj Ahmed")`) works for this small demo, but a real app would get that from user input, not type it directly into the code.
+- `Surface(color = Color.Cyan)` is a fixed color, so it won't change with light/dark theme the way the outer `Surface` using `MaterialTheme.colorScheme.background` does.
+- Without explicit `Arrangement`/`Alignment` parameters, `Row`/`Column` default spacing can look cramped, so those need to be set deliberately for a good layout.
 
 ## 4. Justification of Implementation Decisions
 
-I kept the `Greeting` composable's signature (`name: String, modifier: Modifier = Modifier`) rather than hardcoding the name inside the composable itself, because passing it as a parameter is what makes the function reusable — the same `Greeting` composable can render a preview with one name and the actual app with another (which is exactly what happens: `GreetingPreview` and `MainActivity` both call `Greeting` with different names).
-
-> ✏️ **Add your own justification here:** once you run the app and compare the emulator output to the `@Preview` pane, note any difference you noticed and why.
+I kept `name` as a parameter instead of hardcoding it directly inside `Greeting`, because that's what lets the same function be reused with different names — the preview and the real app call it with different values, and it still works without duplicating the function.
 
 ## 5. Code Highlights
 
@@ -48,21 +49,19 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 ```
 
-This is the core reusable piece: `name` is required, `modifier` has a default so most callers don't need to specify one. `modifier.padding(24.dp)` adds spacing without hardcoding it inside `Text` itself, keeping the composable flexible for different layout contexts. I personalized the app by changing the argument passed in `MainActivity`'s `setContent` block and in `GreetingPreview` from the tutorial's example name to `"Benat Siraj Ahmed"` — full file in [`Source-Code/MainActivity.kt`](./Source-Code/MainActivity.kt).
+`name` is required, `modifier` has a default so it doesn't need to be passed every time. I changed the name passed into this function (in `MainActivity` and in `GreetingPreview`) to "Benat" instead of the tutorial's example name. Full file: [`Source-Code/MainActivity.kt`](./Source-Code/MainActivity.kt).
 
-## 6. Evidence
+## 6. Build a Basic Layout
 
-- Badges: "Learning" (levels progressing through this unit), "First Learning Pathway and Quiz", "Introduction to Programming in Kotlin" — see [`Badge-Evidence/`](./Badge-Evidence/)
+This part covered laying out a small Compose app step by step: building a simple app with text composables, then adding an image, and combining both into a finished screen (the "birthday card app" example from the pathway). The core idea was using layout composables like `Row` and `Column` to control whether elements sit side-by-side or stacked, plus modifiers like `padding` to control spacing. Finished with a quiz (10/10), earning the "Build a Basic Layout" badge.
+
+## 7. Evidence
+
 - Source code: [`Source-Code/MainActivity.kt`](./Source-Code/MainActivity.kt)
+- Badges: Learning, First Learning Pathway and Quiz, Introduction to Programming in Kotlin, Set up Android Studio, Build a Basic Layout — see [`Badge-Evidence/`](./Badge-Evidence/)
 - Output screenshots: see [`Screenshots/`](./Screenshots/)
 
-## 8. Setup Android Studio (Link #2)
-
-This pathway covered installing and configuring Android Studio itself — SDK setup, the IDE layout, and running a project for the first time — assessed via a quiz (scored 10/10), earning the "Set up Android Studio" badge plus another Learning badge. Combined with Pathway 2's "Run your first app on the Android Emulator" step, this closed the loop from writing Compose code to actually seeing it execute on a virtual device.
-
-> ✏️ **Add your own sentence here:** one thing about the Android Studio setup/emulator process that wasn't obvious until you did it yourself (e.g. AVD setup, first build time, SDK version prompts).
-
-## 9. References
+## 8. References
 
 - Google. (2026). *Android Basics with Compose – Unit 1: Your first Android app*. Android Developers. https://developer.android.com/courses/pathways/android-basics-compose-unit-1-pathway-1
 - Google. (2026). *Create your first Android app*. Android Developers. https://developer.android.com/codelabs/basic-android-kotlin-compose-first-app
